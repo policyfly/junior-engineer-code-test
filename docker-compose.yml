@@ -1,0 +1,50 @@
+version: '3'
+
+networks:
+  default:
+    name: policyfly
+    external: true
+
+services:
+
+  postgres:
+    image: postgres:14.1
+    user: postgres
+    environment:
+      - POSTGRES_DB=web
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./:/opt/web:delegated
+      - data_postgres:/var/lib/postgresql/data:delegated
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      timeout: 1s
+      retries: 30
+    env_file:
+      - docker.env
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+    platform: linux/amd64
+    entrypoint: ["/opt/web/bin/entrypoint.sh"]
+    ports:
+      - "5088:5000"
+    volumes:
+      - ./:/opt/web:delegated
+      - data_run:/opt/web/run:delegated
+    env_file:
+      - docker.env
+    depends_on:
+      - postgres
+    healthcheck:
+      test: ["CMD-SHELL", "curl", "-sL", "http://localhost:5000/", "-o", "/dev/null"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
+    restart: "unless-stopped"
+
+volumes:
+  data_run: {}
+  data_postgres: {}
