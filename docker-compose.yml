@@ -38,11 +38,6 @@ services:
       - docker.env
     depends_on:
       - postgres
-    healthcheck:
-      test: ["CMD-SHELL", "curl", "-sL", "http://localhost:5000/", "-o", "/dev/null"]
-      interval: 3s
-      timeout: 2s
-      retries: 5
     restart: "unless-stopped"
 
 volumes:
