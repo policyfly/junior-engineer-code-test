@@ -35,10 +35,17 @@ to begin making posts.
 You can view posts at: `http://localhost:5088/blog/` for a list or visit individual
 posts at `http://localhost:5088/blog/<post_id>`.
 
+## Run the Test Suite
+
+The test suite is built using pytest and can be executed simply through docker
+compose with:
+
+```
+docker compose exec web pytest
+```
+
 
 TODO:
 
-1. Wire up a view to show the display of a single blog, with a simple template.
-2. Wire in tests to show the bug for the post.
 3. Figure out a JS test.
 4. Modernize the README and make sure it's fully accurate, add the objectives of the test to implement the counter.
