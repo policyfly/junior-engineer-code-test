@@ -65,9 +65,3 @@ compose with:
 ```
 docker compose exec web pytest
 ```
-
-
-TODO:
-
-3. Figure out a JS test.
-4. Modernize the README and make sure it's fully accurate, add the objectives of the test to implement the counter.
