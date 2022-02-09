@@ -29,6 +29,11 @@ two tasks here:
 
 ### JavaScript
 
+Within the repo you will find a single js file named `app.js` under `src/`.
+Inside it are some code snippets and some comments prompting you to fill
+them out. Follow the instructions in the file, fill out the snippets and
+commit them to the repo.
+
 ## Setup
 
 Install the latest version of Docker, which should come with Docker Compose.
