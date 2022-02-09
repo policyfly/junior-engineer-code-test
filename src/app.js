@@ -1,7 +1,6 @@
 /**
  * Prompt: Implement a function that validates that the input Vehicles have the
- * following shape and all numbers will be sensible integers. No vehicles
- * should be older than expectedOldestYear or more expensive than expectedCost.
+ * following shape and all numbers will be sensible integers.
  * 
  * interface Vehicle {
  *   type: 'Truck' | 'Trailer' | 'Tractor'
@@ -10,8 +9,8 @@
  * }
  * 
  * @param {Vehicle[]} input 
- * @param {number} expectedCost
- * @param {number} expectedOldestYear
+ * @param {number} expectedCost The expected sum cost of all vehicles passed in
+ * @param {number} expectedOldestYear The expected minimum year of all vehicles passed in
  * @return {boolean} A boolean indicating whether input matches expected{Cost,Year}
  */
 function isValid (input, expectedCost, expectedOldestYear) {
