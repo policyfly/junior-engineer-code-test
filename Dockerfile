@@ -30,6 +30,7 @@ USER root
 ADD . /opt/web
 WORKDIR /opt
 RUN /usr/bin/find . -type d -exec chown web {} \;
+RUN chmod +x /opt/web/bin/entrypoint.sh
 WORKDIR /opt/web
 
 USER web
