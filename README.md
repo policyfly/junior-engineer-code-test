@@ -38,6 +38,12 @@ commit them to the repo.
 
 Install the latest version of Docker, which should come with Docker Compose.
 
+Setup the shared network bridge with:
+
+```
+docker network create -d bridge policyfly
+```
+
 Run the application with:
 
 ```
