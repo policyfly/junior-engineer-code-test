@@ -10,6 +10,7 @@ class Post(models.Model):
     posted_by = models.CharField(max_length=50, default="root")
     posted_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
+    viewed_count = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
