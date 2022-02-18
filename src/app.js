@@ -2,7 +2,7 @@
  * Prompt: Implement a function that validates that the input Vehicles
  * have the expected minimum @param expectedYear and total cost is
  * @param expectedCost. Do not include vehicles with type `Trailer` in
- * these calculations.
+ * either of these calculations.
  * You can assume the following shape of Vehicles below and that all
  * numbers will be sensible integers.
  * interface Vehicle {
