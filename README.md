@@ -47,7 +47,7 @@ docker network create -d bridge policyfly
 Run the application with:
 
 ```
-docker compose up
+docker compose up -d
 ```
 
 Collect static files:
@@ -76,3 +76,9 @@ compose with:
 ```
 docker compose exec web pytest
 ```
+
+## Migrations
+
+If you need to re-run the migrations or run a new migration, you can either stop
+docker compose with `docker compose down` and restart it, which will run the
+migrations. Or run them directly with `docker compose exec web python manage.py migrate`.
